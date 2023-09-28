@@ -24,6 +24,7 @@
     --primary-color: #0369a1;
     --accent-color: #0ea5e9;
     --error-color: #B71C1C;
+    --content-bg-color: #f1eded;
 }
 
 
@@ -51,7 +52,8 @@ ul li .md-icon, ol li .md-icon { vertical-align: middle;}
  ************/
 body {
     font-family: "Montserrat", "Roboto", sans-serif;
-
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -61,8 +63,210 @@ body {
  * APP CONTAINER *
  *****************/
 .app-container {
-
+    min-height:100vh;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
 }
+
+
+
+
+
+
+
+
+/***********
+ * SIDEBAR *
+ ***********/
+aside {
+    min-height:100%;
+    background-color: var(--primary-color);
+    color:white;
+    padding:15px;
+}
+
+/* Header */
+aside header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.7rem;
+}
+aside header p { margin-left: 15px; }
+
+/* Sidebar Items */
+aside ul {
+    margin: 40px 0 0 10px;
+}
+aside ul li {
+    padding: 4px 0;
+}
+aside ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight:bold;
+}
+aside ul li  a:hover { 
+    opacity: 0.5;
+}
+aside ul li  a span { 
+    margin-right: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*********************
+ * CONTENT CONTAINER *
+ *********************/
+.content-container {
+    background-color: var(--content-bg-color);
+}
+
+
+
+
+
+/****************************
+ * CONTENT CONTAINER HEADER *
+ ****************************/
+.content-container header {
+    background-color: white;
+    padding:25px 35px;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.20);
+}
+
+
+/***********
+ * TOP BAR *
+ ***********/
+.content-container header .top-bar {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Search Box */
+.content-container header .top-bar .search-box {
+    display: flex;
+    align-items: center;
+    flex: 2;
+    
+}
+.content-container header .top-bar .search-box label { 
+    width:100%;
+    display: flex;
+    align-items: center;
+}
+.content-container header .top-bar .search-box label input {
+    flex: 1;
+    border-radius: 10px;
+    padding:5px;
+    margin-left: 15px;
+    background-color: var(--content-bg-color);
+}
+.content-container header .top-bar .search-box label input:active,
+.content-container header .top-bar .search-box label input:focus {
+    /* outline: 0.5px solid var(--text-color); */
+    outline: none;
+    background-color: #d1caca;
+}
+
+/* Profile Box */
+.content-container header .top-bar .profile-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    gap: 25px;
+}
+.content-container header .top-bar .profile-box img { 
+    max-width: 40px;
+}
+.content-container header .top-bar .profile-box p {
+    font-weight: bold;
+}
+
+
+
+
+/****************
+ * USER ACTIONS *
+ ****************/
+.content-container header .user-actions {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+}
+
+/* User Avatar */
+.content-container header .user-actions img {
+    max-width: 65px;
+}
+
+
+/* User Greeting */
+.content-container header .user-actions .user-greeting {
+    margin-left: 20px;
+}
+.content-container header .user-actions .user-greeting p:first-child {
+    font-size: 0.9rem;
+}
+.content-container header .user-actions .user-greeting p:last-child {
+    font-size: 1.5rem;
+}
+
+
+
+/* User Action Buttons */
+.content-container header .user-actions .user-action-buttons {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+.content-container header .user-actions .user-action-buttons button {
+    color:white;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    padding:10px 15px;
+    margin-right:20px;
+    cursor: pointer;
+}
+.content-container header .user-actions .user-action-buttons button:hover {
+    background-color: var(--accent-color);
+}
+.content-container header .user-actions .user-action-buttons button:last-child {
+    margin-right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
